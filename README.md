@@ -11,8 +11,8 @@ The Cryptocurrency Price Monitoring and Alerting System is a web application tha
 
 ## Tech Stack
 - **Backend**: Node.js, TypeScript, Express
-- **Database**: MongoDB (for future implementation)
-- **Caching**: Redis
+- **Database**: MongoDB
+- **Caching**: Redis in Docker Container
 - **Frontend**: HTML, CSS, JavaScript, Bootstrap
 - **API**: CoinGecko API
 
@@ -20,8 +20,8 @@ The Cryptocurrency Price Monitoring and Alerting System is a web application tha
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- Redis
-- MongoDB (for future implementation)
+- Redis (maybe using Docker)
+- MongoDB
 
 ### Clone the repository
 ```bash

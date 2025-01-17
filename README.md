@@ -27,3 +27,16 @@ The Cryptocurrency Price Monitoring and Alerting System is a web application tha
 ```bash
 git clone https://github.com/yourusername/cryptocurrency-price-monitoring.git
 cd cryptocurrency-price-monitoring
+```
+### Installing packages(also some typescript specific packages)
+```bash
+npm i
+```
+### Build the application
+```bash
+npm run build
+```
+### Run the application
+```bash
+npm start
+```

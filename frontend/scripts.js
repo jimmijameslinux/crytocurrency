@@ -15,17 +15,26 @@ async function fetchPrices() {
     }
 }
 
-// Populate the price table
+// Populate or update the price table
 function populatePriceTable(prices) {
-
-    for ( const crypto in prices) {
+    for (const crypto in prices) {
         const priceData = prices[crypto];
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${crypto}</td>
-            <td>${priceData.usd}</td>
-        `;
-        priceTable.appendChild(row);
+        let row = document.querySelector(`tr[data-crypto="${crypto}"]`);
+
+        if (row) {
+            // Update the existing row
+            const priceCell = row.querySelector("td:nth-child(2)");
+            priceCell.textContent = priceData.usd; // Update the price
+        } else {
+            // Create a new row if it doesn't exist
+            row = document.createElement("tr");
+            row.setAttribute("data-crypto", crypto); // Set a data attribute for easy selection
+            row.innerHTML = `
+                <td>${crypto}</td>
+                <td>${priceData.usd}</td>
+            `;
+            priceTable.appendChild(row);
+        }
     }
 }
 
@@ -60,4 +69,4 @@ alertForm.addEventListener("submit", async (e) => {
 
 // Fetch prices initially and refresh every 10 seconds
 fetchPrices();
-// setInterval(fetchPrices, 10000);
+setInterval(fetchPrices, 10000);

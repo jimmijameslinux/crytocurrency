@@ -16,7 +16,7 @@ export const fetchSimplePrice = async (): Promise<void> => {
         // Fetch cryptocurrency prices
         const response = await axios.get(API_URL, {
             params: {
-                ids: 'bitcoin',
+                ids: 'bitcoin,ethereum,litecoin,ripple,dogecoin,cardano,polkadot,uniswap,chainlink,binancecoin',
                 vs_currencies: 'usd',
                 x_cg_demo_api_key: process.env.CRYPTO_API_KEY,
             },

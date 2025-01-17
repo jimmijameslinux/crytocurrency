@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Monitor</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Cryptocurrency Price Monitor</h1>
+
+    <!-- Cryptocurrency Prices -->
+    <div class="mb-4">
+      <h2>Real-Time Prices</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Cryptocurrency</th>
+            <th>Price (USD)</th>
+          </tr>
+        </thead>
+        <tbody id="priceTable">
+          <!-- Prices will be dynamically populated -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Alert Form -->
+    <div>
+      <h2>Set an Alert</h2>
+      <form id="alertForm">
+        <div class="mb-3">
+          <label for="cryptoSymbol" class="form-label">Cryptocurrency Symbol</label>
+          <input type="text" class="form-control" id="cryptoSymbol" placeholder="e.g., BTC, ETH" required>
+        </div>
+        <div class="mb-3">
+          <label for="threshold" class="form-label">Price Threshold</label>
+          <input type="number" class="form-control" id="threshold" placeholder="Enter price threshold" required>
+        </div>
+        <div class="mb-3">
+          <label for="direction" class="form-label">Direction</label>
+          <select class="form-select" id="direction" required>
+            <option value="above">Above</option>
+            <option value="below">Below</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Set Alert</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
